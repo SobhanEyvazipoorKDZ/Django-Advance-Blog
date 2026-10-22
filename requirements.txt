@@ -10,4 +10,8 @@ django-filter==22.1
 drf-yasg[validation]==1.21.7
 djangorestframework-simplejwt==5.3.1
 setuptools<82
+
 # deployment module
+
+# email third party modules
+django-mail-templated==2.4.7
