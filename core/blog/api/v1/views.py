@@ -21,7 +21,7 @@ def postList(request):
         return Response(serializer.data)
 
 @api_view(["GET","PUT","DELETE"])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def postDetail(request,id):
     post = get_object_or_404(Post,pk=id,status=True)
     if request.method == "GET":
