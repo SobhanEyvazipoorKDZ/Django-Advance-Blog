@@ -1,21 +1,15 @@
 from rest_framework.permissions import (
     IsAuthenticated,
     IsAuthenticatedOrReadOnly,
-    IsAdminUser,
 )
-from rest_framework.response import Response
-from .serializers import PostSerializer, CategorySerializer
-from ...models import Post, Category
-from rest_framework import status
-from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework.decorators import action
-from .permissions import IsOwnerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .paginations import DefaultPagination
 from .filters import PostFilters
+from .serializers import PostSerializer, CategorySerializer
+from ...models import Post, Category
+from .permissions import IsOwnerOrReadOnly
 
 # Example for Function Based View
 """

@@ -18,3 +18,4 @@ django-mail-templated==2.4.7
 
 # refactoring and tests
 black
+flake8
