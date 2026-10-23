@@ -70,7 +70,7 @@ class PostListView(ListView):
     #     return posts
 
 
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 
