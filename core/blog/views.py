@@ -34,7 +34,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["name"] = "ali"
-        context["posts"] = Post.objects.all()
+        # context["posts"] = Post.objects.all()
         return context
 
 
@@ -57,7 +57,7 @@ class RedirectToMaktab(RedirectView):
         return super().get_redirect_url(*args, **kwargs)
 
 
-class PostListView(PermissionRequiredMixin, LoginRequiredMixin, ListView):
+class PostListView(ListView):
     permission_required = "blog.view_post"
     queryset = Post.objects.all()
     # model = Post
@@ -70,7 +70,7 @@ class PostListView(PermissionRequiredMixin, LoginRequiredMixin, ListView):
     #     return posts
 
 
-class PostDetailView(LoginRequiredMixin, DetailView):
+class PostDetailView(DetailView):
     model = Post
 
 
