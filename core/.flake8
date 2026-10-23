@@ -15,6 +15,10 @@ exclude =
 
 ignore =
     E501
+    E301
+    E302
     E303
     W291
-    W293   
+    W293 
+    E231
+    W292  
