@@ -16,8 +16,6 @@ jobs:
         run: docker-compose up -d
       - name: Run Tests
         run: docker exec backend sh -c "flake8 && pytest ."
-      - name: On Purpose Fail
-        run: false
 
   Deploy:
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
@@ -33,4 +31,8 @@ jobs:
           password: ${{secrets.PASSWORD}}
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
-          script: ls
+          script: |
+            cd ${{secrets.PROJECT_PATH}}
+            docker-compose -f docker-compose-stage.yml stop
+            git pull
+            docker-compose -f docker-compose-stage.yml restart
