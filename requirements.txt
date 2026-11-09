@@ -15,6 +15,7 @@ social-auth-app-django==5.0.0
 django-cors-headers==4.3.1
 
 # deployment module
+gunicorn==23.0.0
 
 # email third party modules
 django-mail-templated==2.4.7
@@ -27,6 +28,6 @@ pytest-django==4.8.0
 faker
 
 # background proccess and cache
-celery
-redis
-django-redis
+celery==5.5.3
+redis==5.2.1
+django-redis==5.4.0
