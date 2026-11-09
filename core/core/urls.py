@@ -39,14 +39,14 @@ schema_view = get_schema_view(
 )
 
 def indexView(request):
-    return HttpResponse('<h1>Index Page</h1>')
+    return HttpResponse("<h1>Index Page</h1>")
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("accounts/", include("accounts.urls")),
-    path("",indexView,name='index'),
+    path("",indexView,name="index"),
     path("blog/", include("blog.urls")),
     # path('api-docs/',include_docs_urls(title='api sample')),
     path(
